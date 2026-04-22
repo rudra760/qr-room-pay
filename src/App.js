@@ -5,22 +5,22 @@ const users = [
   { name: "Rohan Rana", upi: "rohan7699170963-1@okicici" },
   { name: "Prince Ali sek ", upi: "princepanda7029-1@okhdfcbank" },
   { name: "Rudra", upi: "10011727rudraprasad@oksbi" },
-  { name: "Sourav", upi: "sourav@upi" },
-  { name: "Arijit", upi: "arijit@upi" }
+  { name: "Bibeak Sharma", upi: "sourav@upi" },
+  { name: "Bhaskar", upi: "arijit@upi" }
 ];
 
 function App() {
   const [amount, setAmount] = useState("");
 
   const pay = (upi, name) => {
-    if (!amount) {
-      alert("Amount dao age");
-      return;
-    }
+  if (!amount) {
+    alert("Amount dao age");
+    return;
+  }
 
-    const url = `upi://pay?pa=${upi}&pn=${name}&am=${amount}&cu=INR`;
-    window.location.href = url;
-  };
+  const url = `upi://pay?pa=${upi}&pn=${name}&am=${amount}&cu=INR&tn=RoomPayment`;
+  window.location.href = url;
+};
 
   return (
     <div className="container">
