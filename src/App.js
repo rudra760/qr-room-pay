@@ -8,6 +8,7 @@ const users = [
   { name: "Rudra", upi: "10011727rudraprasad@oksbi", emoji: "⚡" },
   { name: "Bibeak Sharma", upi: "sourav@upi", emoji: "🎯" },
   { name: "Bhaskar", upi: "arijit@upi", emoji: "🌟" },
+  { name: "Partho Saha ", upi: "8695379031@kotak811", emoji: "💩" },
 ];
 
 // UPI apps with their deep link schemes
