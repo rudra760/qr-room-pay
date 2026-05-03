@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Room Payment</title>
+  <style>
+    body { background: #0f0f1a; color: white; font-family: sans-serif; padding: 20px; }
+    h1 { text-align: center; color: #a78bfa; }
+    input { width: 100%; padding: 14px; font-size: 1.2rem; border-radius: 12px; border: none; margin-bottom: 12px; background: #1e1e30; color: white; }
+    .card { background: #1a1a2e; border: 1.5px solid #2a2a45; border-radius: 16px; padding: 16px; margin-bottom: 10px; cursor: pointer; }
+    .card:active { background: #2a2a45; }
+    .name { font-size: 1rem; font-weight: 700; }
+    .upi { font-size: 0.75rem; color: #666; }
+    a.pay-link { display: block; text-decoration: none; color: inherit; }
+  </style>
+</head>
+<body>
+  <h1>💸 Room Payment</h1>
+  <input type="number" id="amount" placeholder="₹ Amount likho" />
+
+  <div class="card" onclick="pay('rohan7699170963-1@okicici','Rohan Rana')">
+    <div class="name">🧑 Rohan Rana</div>
+    <div class="upi">rohan7699170963-1@okicici</div>
+  </div>
+  <div class="card" onclick="pay('princepanda7029-1@okhdfcbank','Prince Ali Sek')">
+    <div class="name">👑 Prince Ali Sek</div>
+    <div class="upi">princepanda7029-1@okhdfcbank</div>
+  </div>
+  <div class="card" onclick="pay('10011727rudraprasad@oksbi','Rudra')">
+    <div class="name">⚡ Rudra</div>
+    <div class="upi">10011727rudraprasad@oksbi</div>
+  </div>
+  <div class="card" onclick="pay('sourav@upi','Bibeak Sharma')">
+    <div class="name">🎯 Bibeak Sharma</div>
+    <div class="upi">sourav@upi</div>
+  </div>
+  <div class="card" onclick="pay('arijit@upi','Bhaskar')">
+    <div class="name">🌟 Bhaskar</div>
+    <div class="upi">arijit@upi</div>
+  </div>
+  <div class="card" onclick="pay('8695379031@kotak811','Partho Saha')">
+    <div class="name">👩 Partho Saha</div>
+    <div class="upi">8695379031@kotak811</div>
+  </div>
+
+  <script>
+    function pay(upi, name) {
+      const amount = document.getElementById('amount').value;
+      if (!amount || amount <= 0) {
+        alert('Amount dao age!');
+        return;
+      }
+      const url = `upi://pay?pa=${upi}&pn=${encodeURIComponent(name)}&am=${parseFloat(amount).toFixed(2)}&cu=INR&tn=RoomPayment`;
+      window.location.href = url;
+    }
+  </script>
+</body>
+</html>
